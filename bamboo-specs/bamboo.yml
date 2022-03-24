@@ -4,7 +4,7 @@ plan:
   project-key: RCTJS1
   key: RCTPL1
   name: ReactJS-Plan1
-  description: Build Frontend application
+  description: Build frontend application
 stages:
 - Default Stage:
     manual: false
