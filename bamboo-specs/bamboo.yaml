@@ -18,8 +18,22 @@ React-JS-Jfrog:
      - script:
          interpreter: BINSH_OR_CMDEXE
          scripts:
-           - tar -xvf calculator-0.1.0.tgz
+           - tar -xvf calculator-0.1.2.tgz
          description: Extract tar.gz file
+     - any-task:
+         plugin-key: com.atlassian.bamboo.plugins.bamboo-nodejs-plugin:task.builder.npm
+         configuration:
+         isolatedCache: 'false'
+         runtime: Node.js Path 14-03-2022
+         command: install
+         description: Node.JS install (It will create node_modules folder)
+     - any-task:
+         plugin-key: com.atlassian.bamboo.plugins.bamboo-nodejs-plugin:task.builder.npm
+         configuration:
+         isolatedCache: 'false'
+         runtime: Node.js
+         command: run build
+         description: Node.JS run build (It will create build folder)
      - scp:
          host: 3.144.206.84
          local-path: package/build/**
