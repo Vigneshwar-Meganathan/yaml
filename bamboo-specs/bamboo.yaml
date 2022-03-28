@@ -18,7 +18,7 @@ React-JS-Jfrog:
      - script:
          interpreter: BINSH_OR_CMDEXE
          scripts:
-           - tar -xvf react-redux-realworld-example-app-0.1.0.tgz
+           - tar -xvf calculator-0.1.0.tgz
          description: Extract tar.gz file
      - scp:
          host: 3.144.206.84
