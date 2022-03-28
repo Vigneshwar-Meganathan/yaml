@@ -23,11 +23,13 @@ React-JS-Jfrog:
      - script:
          interpreter: SHELL
          scripts:
-           - npm i -f package/
+           - cd package/
+           - npm install
          description: Install the node_modules
      - script:
          interpreter: SHELL
          scripts:
+           - cd package/
            - npm run build
          description: Creating build file   
      - scp:
