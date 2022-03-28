@@ -28,7 +28,7 @@ React-JS-Jfrog:
      - script:
          interpreter: SHELL
          scripts:
-           - npm run build -f package/
+           - npm run build
          description: Creating build file   
      - scp:
          host: 3.144.206.84
