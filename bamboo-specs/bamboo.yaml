@@ -2,13 +2,21 @@
 version: 2
 plan:
   project-key: MARS
-  key: ROCKET
-  name: Build the Rocket
+  key: RCTPUL
+  name: React-Pull-Yaml
 stages:
-  - Build hull:
-    - Build
+  - Stage-Publish:
+    - React-JS-Jfrog
 
-Build:
-  tasks:
-    - script:
-      - echo 'Hello World!'
+React-JS-Jfrog:
+   tasks:
+     - script:
+        interpreter: SHELL
+        scripts:
+          - npm pack calculator
+        description: Pull npm artifacts from Jfrog repository step 2
+     - script:
+        interpreter: BINSH_OR_CMDEXE
+        scripts:
+          - tar -xvf react-redux-realworld-example-app-0.1.0.tgz
+        description: Extract tar.gz file
