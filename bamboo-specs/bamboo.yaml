@@ -14,7 +14,7 @@ React-JS-Jfrog:
          interpreter: SHELL
          scripts:
            - npm pack calculator
-         description: Pull npm artifacts from Jfrog repository step 2
+         description: Pull npm artifacts from Jfrog repository.
      - script:
          interpreter: BINSH_OR_CMDEXE
          scripts:
