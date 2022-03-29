@@ -13,40 +13,19 @@ React-JS-Jfrog:
      - script:
          interpreter: SHELL
          scripts:
-          - npm pack calculator
+           - npm pack calculator
          description: Pull npm artifacts from Jfrog repository step 2
      - script:
          interpreter: BINSH_OR_CMDEXE
          scripts:
-           - tar -xvf calculator-0.1.2.tgz
+          - tar -xvf react-redux-realworld-example-app-0.1.0.tgz
          description: Extract tar.gz file
-     - script:
-         interpreter: SHELL
-         scripts:
-           - cd package/
-           - npm install
-         description: Install the node_modules
-     - script:
-         interpreter: SHELL
-         scripts:
-           - cd package/
-           - npm run build
-         description: Creating build file   
      - scp:
-         host: 3.144.206.84
-         local-path: package/build/**
-         destination-path: /home/ec2-user/
-         authentication:
-           username: ec2-user
-           ssh-key: BAMSCRT@0@0@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
-           ssh-key-passphrase: BAMSCRT@0@0@MIpMo6/UAL/xOxHGhHKdNA==
-     - ssh:
-         host: 3.144.206.84
-         command: "sudo su \r\ncp -R /home/ec2-user/package /usr/share/nginx/html"
-         authentication:
-           username: ec2-user
-           ssh-key: BAMSCRT@0@0@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
-           ssh-key-passphrase: BAMSCRT@0@0@MIpMo6/UAL/xOxHGhHKdNA==
-         description: ssh cp process
-          
-       
+        host: 3.144.206.84
+        local-path: package/**
+        destination-path: /home/ec2-user/
+        authentication:
+          username: ec2-user
+          ssh-key: BAMSCRT@0@0@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
+          ssh-key-passphrase: BAMSCRT@0@0@MIpMo6/UAL/xOxHGhHKdNA==
+       description: Transfer files from local to remote server
