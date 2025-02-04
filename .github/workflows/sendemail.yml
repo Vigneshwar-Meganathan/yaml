@@ -1,0 +1,22 @@
+name: Notify on Branch Deletion
+
+on:
+  delete:
+    branches:  # Triggers only for branch deletions
+      - '**'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Email Notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: devopsteamawsacc@gmail.com
+          password: zsrj iwbl mxry cjdc
+          subject: "GitHub Branch Deleted: ${{ github.event.ref }}"
+          body: "Branch ${{ github.event.ref }} has been deleted from ${{ github.repository }}"
+          to: vigneshmeganathan40@gmail.com
+          from: "GitHub Actions <devopsteamawsacc@gmail.com>"
